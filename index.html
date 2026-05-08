@@ -6,85 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <!-- 禁用缓存，解决Safari缓存错误页面的问题 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>钓鱼相机</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
-        html, body {
-            width: 100%;
-            height: 100%;
-            background: #fff;
-        }
-        .page {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-        }
-        .app-img {
-            width: 220px;
-            height: auto;
-            border-radius: 16px;
-            margin-bottom: 40px;
-        }
-        .title {
-            font-size: 26px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        .desc {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 50px;
-        }
-        .download-btn {
-            width: 240px;
-            padding: 16px 0;
-            background: #007aff;
-            color: white;
-            font-size: 18px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        html,body{width:100%;height:100%;background:#fff}
+        .page{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
+        .app-img{width:120px;height:120px;border-radius:16px;margin-bottom:30px;object-fit:cover}
+        .title{font-size:24px;color:#333;margin-bottom:15px;font-weight:500}
+        .desc{font-size:18px;color:#666;margin-bottom:40px;line-height:1.6}
+        .download-btn{width:260px;padding:15px 0;background:#2196F3;color:white;font-size:20px;border:none;border-radius:12px;cursor:pointer;transition:background 0.3s ease}
+        .download-btn:hover{background:#1976D2}
+        /* 背景装饰 */
+        .dot-blue{position:absolute;top:0;left:0;width:200px;height:200px;background:rgba(102,126,234,0.15);border-radius:50%;filter:blur(30px)}
+        .dot-yellow{position:absolute;bottom:10%;left:0;width:80px;height:80px;background:rgba(255,204,0,0.3);border-radius:50%;filter:blur(20px)}
+        .dot-green{position:absolute;top:50%;right:10%;width:40px;height:40px;background:rgba(76,217,100,0.4);border-radius:50%;filter:blur(15px)}
     </style>
 
-<!-- XInstall 核心代码（你提供的，已完美嵌入） -->
+<!-- XInstall 核心代码 -->
 <script type="text/javascript" charset="UTF-8" src="https://cdn.xinstall.com/xinstall.js"></script>
 <script type="text/javascript">
-  var data = XInstall.parseUrlParams();
-  new XInstall({
-    appKey : "jv05awjn",
-    onready : function() {
-      var m = this, button = document.getElementById("downloadButton");
-      button.onclick = function() {
-        m.wakeupOrInstall();
-      }
+var data=XInstall.parseUrlParams();
+new XInstall({
+    appKey:"jv05awjn",
+    onready:function(){
+        var m=this,button=document.getElementById("downloadButton");
+        button.onclick=function(){m.wakeupOrInstall()}
     }
-  }, data);
+},data);
 </script>
-
 </head>
 <body>
-
-<div class="page">
-    <!-- 这里是你上传到 GitHub 的图片 -->
-    <img class="app-img" src="b924da1c996f4a01b7abc7ae246a0d77.jpg">
-    
-    <h1 class="title">钓鱼相机</h1>
-    <p class="desc">跳转失败请使用浏览器打开</p>
-    
-    <!-- 下载按钮 -->
-    <button id="downloadButton" class="download-btn">打开 / 下载APP</button>
-</div>
-
+    <div class="dot-blue"></div>
+    <div class="dot-yellow"></div>
+    <div class="dot-green"></div>
+    <div class="page">
+        <img class="app-img" src="https://cdn.jsdelivr.net/gh/麦俊杰/dyxjdownload@master/b924da1c996f4a01b7abc7ae246a0d77.jpg" alt="钓鱼相机">
+        <h1 class="title">钓鱼相机</h1>
+        <p class="desc">如跳转失败，右上角请使用浏览器打开</p>
+        <button id="downloadButton" class="download-btn">打开/下载APP</button>
+    </div>
 </body>
 </html>
